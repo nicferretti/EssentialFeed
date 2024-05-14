@@ -68,6 +68,15 @@
 			path = "Feed API";
 			sourceTree = "<group>";
 		};
+		4A14BC6C2BF4089900306C29 /* Feed Feature */ = {
+			isa = PBXGroup;
+			children = (
+				4AE832332BE50D3E006E1A37 /* FeedItem.swift */,
+				4AE832352BE50E08006E1A37 /* FeedLoader.swift */,
+			);
+			path = "Feed Feature";
+			sourceTree = "<group>";
+		};
 		4AA3B6062BEC195900B68FEB /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +111,7 @@
 				4AA3B6062BEC195900B68FEB /* Feed API */,
 				4AE8321C2BE50D28006E1A37 /* EssentialFeed.h */,
 				4AE8321D2BE50D28006E1A37 /* EssentialFeed.docc */,
-				4AE832332BE50D3E006E1A37 /* FeedItem.swift */,
-				4AE832352BE50E08006E1A37 /* FeedLoader.swift */,
+				4A14BC6C2BF4089900306C29 /* Feed Feature */,
 			);
 			path = EssentialFeed;
 			sourceTree = "<group>";
