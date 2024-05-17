@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A042E7A2BF7583700245B7D /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		4A14BC672BF3FD4500306C29 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4A14BC692BF3FDDD00306C29 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		4A7F463D2BF5485C00A47294 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		4AE8320F2BE50D28006E1A37 = {
 			isa = PBXGroup;
 			children = (
+				4A042E7A2BF7583700245B7D /* CI.xctestplan */,
 				4AC15C3E2BF7538400DB5049 /* EssentialFeedAPIEndToEndTests.xctestplan */,
 				4AC15C2F2BF74F7800DB5049 /* EssentialFeed.xctestplan */,
 				4AE8321B2BE50D28006E1A37 /* EssentialFeed */,
