@@ -142,10 +142,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         return receivedResult
     }
 
-    var anyURL: URL {
-        return URL(string: "https://some-url.com")!
-    }
-
     var nonHTTPURLResponse: URLResponse {
         return URLResponse(url: anyURL, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
     }
@@ -155,7 +151,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
     }
 
     let anyData = Data("any data".utf8)
-    let anyNSError = NSError(domain: "any error", code: 0)
 
     private class URLProtocolStub: URLProtocol {
         private static var stub: Stub?
