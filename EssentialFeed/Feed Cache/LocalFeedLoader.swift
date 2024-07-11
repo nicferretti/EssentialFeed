@@ -44,10 +44,7 @@ public final class LocalFeedLoader {
             case .found(feed: let feed, timestamp: let timestamp) where validate(timestamp):
                 completion(.success(feed.toModels()))
 
-            case .found:
-                completion(.success([]))
-
-            case .empty:
+            case .found, .empty:
                 completion(.success([]))
 
             }
@@ -62,7 +59,7 @@ public final class LocalFeedLoader {
             case .failure:
                 self.store.deleteCachedFeed { _ in }
 
-            case .found(feed: let feed, timestamp: let timestamp) where !validate(timestamp):
+            case .found(feed: _, timestamp: let timestamp) where !validate(timestamp):
                 self.store.deleteCachedFeed { _ in }
                 
             case .empty, .found:
