@@ -171,27 +171,20 @@ final class CodableFeedStoreTests: XCTestCase {
     func test_delete_hasNoSideEffectsOnEmptyCache() {
         let sut = makeSUT()
 
-        let exp = expectation(description: "Wait for cache deletion to complete")
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNil(deletionError, "Expected deletion of non-empty cache to succeed")
 
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expcted empty cache deletion to succeed")
-            exp.fulfill()
-        }
-
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toRetrieve: .empty)
     }
 
     func test_delete_emptiesPreviouslyInsertedCache() {
         let sut = makeSUT()
         insert((feed: uniqueImageFeed().local, timestamp: Date()), to: sut)
 
-        let exp = expectation(description: "Wait for cache deletion to complete")
-        sut.deleteCachedFeed { deletionError in
-            XCTAssertNil(deletionError, "Expected deletion of non-empty cache to succeed")
-            exp.fulfill()
-        }
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNil(deletionError, "Expected deletion of non-empty cache to succeed")
 
-        wait(for: [exp], timeout: 1.0)
+        expect(sut, toRetrieve: .empty)
     }
 
     // - MARK: Helpers
@@ -217,6 +210,20 @@ final class CodableFeedStoreTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
 
         return insertionError
+    }
+
+    private func deleteCache(from sut: CodableFeedStore) -> Error? {
+        let exp = expectation(description: "Wait for cache deletion to complete")
+
+        var deletionError: Error?
+        sut.deleteCachedFeed { receivedDeletionError in
+            deletionError = receivedDeletionError
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 1.0)
+
+        return deletionError
     }
 
     private func expect(_ sut: CodableFeedStore, toRetrieve expectedResult: RetrievedCachedFeedResult, file: StaticString = #file, line: UInt = #line) {
