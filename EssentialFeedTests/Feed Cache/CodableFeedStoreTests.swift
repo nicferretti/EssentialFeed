@@ -73,8 +73,12 @@ class CodableFeedStore {
             return completion(nil)
         }
 
-        try! FileManager.default.removeItem(at: storeURL)
-        completion(nil)
+        do {
+            try FileManager.default.removeItem(at: storeURL)
+            completion(nil)
+        } catch {
+            completion(error)
+        }
     }
 }
 
@@ -125,7 +129,7 @@ final class CodableFeedStoreTests: XCTestCase {
     }
 
     func test_retrieve_deliversFailureOnRetrievalError() {
-        let storeURL = testSpecificStoreURL
+        let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
 
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
@@ -134,7 +138,7 @@ final class CodableFeedStoreTests: XCTestCase {
     }
 
     func test_retrieve_hasNoSideEffectsOnFailure() {
-        let storeURL = testSpecificStoreURL
+        let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
 
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
@@ -187,12 +191,28 @@ final class CodableFeedStoreTests: XCTestCase {
         expect(sut, toRetrieve: .empty)
     }
 
+    func test_delete_deliversErrorOnDeletionError() {
+        let noDeletePermissionURL = cachesDirectory()
+        let sut = makeSUT(storeURL: noDeletePermissionURL)
+
+        let deletionError = deleteCache(from: sut)
+
+        XCTAssertNotNil(deletionError, "Expcted cache deletion to fail")
+        expect(sut, toRetrieve: .empty)
+    }
+
     // - MARK: Helpers
 
-    private let testSpecificStoreURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!.appendingPathComponent("\(type(of: CodableFeedStoreTests.self)).store")
+    private func testSpecificStoreURL() -> URL {
+        return cachesDirectory().appendingPathComponent("\(type(of: CodableFeedStoreTests.self)).store")
+    }
+
+    private func cachesDirectory() -> URL {
+        return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+    }
 
     private func makeSUT(storeURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
-        let sut = CodableFeedStore(storeURL: storeURL ?? testSpecificStoreURL)
+        let sut = CodableFeedStore(storeURL: storeURL ?? testSpecificStoreURL())
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -262,7 +282,7 @@ final class CodableFeedStoreTests: XCTestCase {
     }
 
     private func deleteStoreArtefacts() {
-        try? FileManager.default.removeItem(at: testSpecificStoreURL)
+        try? FileManager.default.removeItem(at: testSpecificStoreURL())
     }
 
 }
