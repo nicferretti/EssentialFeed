@@ -8,6 +8,35 @@
 import XCTest
 import EssentialFeed
 
+protocol FeedStoreSpecs {
+    func test_retrieve_deliversEmptyOnEmptyCache()
+    func test_retrieve_hasNoSideEffectsOnEmptyCache()
+    func test_retrieve_deliversFoundValuesOnNonEmptyCache()
+    func test_retrieve_hasNoSideEffectsOnNonEmptyCache()
+
+    func test_insert_overridesPreviouslyInsertedCachedValues()
+
+    func test_delete_hasNoSideEffectsOnEmptyCache()
+    func test_delete_emptiesPreviouslyInsertedCache()
+
+    func test_storeSideEffects_runSerially()
+}
+
+protocol FailableRetrieveFeedStoreSpecs {
+    func test_retrieve_deliversFailureOnRetrievalError()
+    func test_retrieve_hasNoSideEffectsOnFailure()
+}
+
+protocol FailableInsertFeedStoreSpecs {
+    func test_insert_deliversErrorOnInsertionError()
+    func test_insert_hasNoSideEffectsOnInsertionError()
+}
+
+protocol FailableDeleteFeedStoreSpecs {
+    func test_delete_deliversErrorOnDeletionError()
+    func test_delete_hasNoSideEffectsOnDeletionError()
+}
+
 final class CodableFeedStoreTests: XCTestCase {
 
     override func setUp() {
@@ -98,6 +127,17 @@ final class CodableFeedStoreTests: XCTestCase {
         XCTAssertNotNil(insertionError, "Expected cache insertion to fail with an error")
     }
 
+    func test_insert_hasNoSideEffectsOnInsertionError() {
+        let invalidStoreURL = URL(string: "invalid://store-url")
+        let sut = makeSUT(storeURL: invalidStoreURL)
+        let feed = uniqueImageFeed().local
+        let timestamp = Date()
+
+        insert((feed: feed, timestamp: timestamp), to: sut)
+
+        expect(sut, toRetrieve: .empty)
+    }
+
     func test_delete_hasNoSideEffectsOnEmptyCache() {
         let sut = makeSUT()
 
@@ -124,6 +164,15 @@ final class CodableFeedStoreTests: XCTestCase {
         let deletionError = deleteCache(from: sut)
 
         XCTAssertNotNil(deletionError, "Expcted cache deletion to fail")
+        expect(sut, toRetrieve: .empty)
+    }
+
+    func test_delete_hasNoSideEffectsOnDeletionError() {
+        let noDeletePermissionURL = cachesDirectory()
+        let sut = makeSUT(storeURL: noDeletePermissionURL)
+
+        let _ = deleteCache(from: sut)
+
         expect(sut, toRetrieve: .empty)
     }
 
