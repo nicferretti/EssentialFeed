@@ -37,7 +37,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
         let sut = makeSUT()
         
-        assertsThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
 
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
