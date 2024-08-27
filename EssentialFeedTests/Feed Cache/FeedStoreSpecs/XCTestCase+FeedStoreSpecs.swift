@@ -83,7 +83,7 @@ extension FeedStoreSpecs where Self: XCTestCase {
         expect(sut, toRetrieve: .empty)
     }
 
-    func assertThatDeleteEmptiesPreviouslyCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
+    func assertThatDeleteEmptiesPreviouslyInsertedCache(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
         insert((feed: uniqueImageFeed().local, timestamp: Date()), to: sut)
 
         let deletionError = deleteCache(from: sut)
