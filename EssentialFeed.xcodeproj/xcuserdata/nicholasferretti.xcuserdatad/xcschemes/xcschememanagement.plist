@@ -19,9 +19,19 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>EssentialFeedCacheIntegrationTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4A79AB7F2C7FA77A0034E024</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4AC15C332BF7513600DB5049</key>
 		<dict>
 			<key>primary</key>
