@@ -71,10 +71,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
                 XCTAssertEqual(loadedFeed, expectedFeed, file: file, line: line)
 
             case .failure(let error):
-                XCTFail("Expcted successfuly feed result but got \(error) instead.", file: file, line: line)
-            @unknown default:
-                fatalError()
-            }
+                XCTFail("Expcted successfuly feed result but got \(error) instead.", file: file, line: line)            }
 
             exp.fulfill()
         }
