@@ -37,7 +37,7 @@
                                             <rect key="frame" x="20" y="17" width="353" height="546"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="4Lq-mr-QFi" userLabel="Location Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="58.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="58.333333333333336"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8RI-0N-QZj" userLabel="Pin Container">
                                                             <rect key="frame" x="0.0" y="0.0" width="10" height="58.333333333333336"/>
@@ -57,7 +57,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKn-Kp-0qQ">
-                                                            <rect key="frame" x="16" y="0.0" width="63" height="36"/>
+                                                            <rect key="frame" x="16" y="0.0" width="337" height="36"/>
                                                             <string key="text">Location,
 Location</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -96,7 +96,7 @@ Location</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4Lq-mr-QFi" firstAttribute="width" secondItem="ceg-RQ-1by" secondAttribute="width" multiplier="0.223796" id="NDV-D8-4Wg"/>
+                                                <constraint firstItem="4Lq-mr-QFi" firstAttribute="width" secondItem="ceg-RQ-1by" secondAttribute="width" id="NDV-D8-4Wg"/>
                                                 <constraint firstItem="Oen-cC-H1R" firstAttribute="width" secondItem="ceg-RQ-1by" secondAttribute="width" id="jeZ-XG-POn"/>
                                             </constraints>
                                         </stackView>
@@ -111,8 +111,8 @@ Location</string>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="OmE-TU-85H" id="s4v-rC-LPh"/>
                                     <outlet property="feedImageView" destination="L9W-NS-UgC" id="ubv-Ac-DDr"/>
+                                    <outlet property="locationContainer" destination="4Lq-mr-QFi" id="zPY-PB-3s8"/>
                                     <outlet property="locationLabel" destination="uKn-Kp-0qQ" id="Srv-ye-Zz2"/>
-                                    <outlet property="locationView" destination="4Lq-mr-QFi" id="zPY-PB-3s8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
