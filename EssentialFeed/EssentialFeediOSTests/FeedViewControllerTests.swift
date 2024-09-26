@@ -31,7 +31,7 @@ final class FeedViewControllerTests: XCTestCase {
         let (sut, loader) = makeSUT()
 
         sut.simulateAppearance()
-        XCTAssertTrue(sut.isShowingLoadingIndicator, "Expcted loading inidicator once view is loaded")
+        XCTAssertTrue(sut.isShowingLoadingIndicator, "Expected loading indicator once view is loaded")
 
         loader.completeFeedLoading(at: 0)
         XCTAssertFalse(sut.isShowingLoadingIndicator, "Expected no loading indicator once loading completes successfully")
@@ -416,6 +416,7 @@ private extension FeedViewController {
         }
         
         refreshControl = fake
+        refreshController?.view = fake
     }
     
     func numberOfRenderedImageViews() -> Int {
