@@ -686,6 +686,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = 4AE8320F2BE50D28006E1A37;
 			productRefGroup = 4AE8321A2BE50D28006E1A37 /* Products */;
