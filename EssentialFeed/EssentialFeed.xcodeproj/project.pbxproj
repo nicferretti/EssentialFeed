@@ -375,6 +375,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4A66B70F2CC6F662008B70AC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4A136B202CADFAF700A85DA2 /* UIImageView+Animations.swift */,
+				4A136B1E2CADF7E300A85DA2 /* UITableView+Dequeueing.swift */,
+				4A68677E2C9E227A00382A2F /* UIView+Shimmering.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4A79AB812C7FA77A0034E024 /* EssentialFeedCacheIntegrationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,10 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				4A66B70D2CC6F0CB008B70AC /* ErrorView.swift */,
-				4A136B202CADFAF700A85DA2 /* UIImageView+Animations.swift */,
-				4A136B1E2CADF7E300A85DA2 /* UITableView+Dequeueing.swift */,
+				4A66B70F2CC6F662008B70AC /* Helpers */,
 				4A68677C2C9E0AB300382A2F /* FeedImageViewCell.swift */,
-				4A68677E2C9E227A00382A2F /* UIView+Shimmering.swift */,
 				4A136B142CADE0DD00A85DA2 /* Feed.storyboard */,
 				4A136B162CADE14F00A85DA2 /* Feed.xcassets */,
 			);
