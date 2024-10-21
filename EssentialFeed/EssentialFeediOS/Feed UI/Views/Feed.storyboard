@@ -10,24 +10,41 @@
         <!--Feed View Controller-->
         <scene sceneID="nxh-pN-NRx">
             <objects>
-                <tableViewController id="N4D-cF-0BP" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="N4D-cF-0BP" customClass="FeedViewController" customModule="EssentialFeediOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sgB-sI-wZS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="clu-9B-M8g" customClass="ErrorView" customModule="EssentialFeediOS" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="16"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zh-7u-AM2">
+                                    <rect key="frame" x="8" y="8" width="377" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="1Zh-7u-AM2" secondAttribute="trailing" constant="8" id="EgQ-IA-Cyx"/>
+                                <constraint firstItem="1Zh-7u-AM2" firstAttribute="leading" secondItem="clu-9B-M8g" secondAttribute="leading" constant="8" id="MZn-4U-plJ"/>
+                                <constraint firstAttribute="bottom" secondItem="1Zh-7u-AM2" secondAttribute="bottom" constant="8" id="brH-iI-8Tc"/>
+                                <constraint firstItem="1Zh-7u-AM2" firstAttribute="top" secondItem="clu-9B-M8g" secondAttribute="top" constant="8" id="qed-2m-hOY"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="label" destination="1Zh-7u-AM2" id="vMA-mm-dBP"/>
+                            </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="xLM-J8-8Ek">
-                            <rect key="frame" x="0.0" y="674" width="393" height="16"/>
+                            <rect key="frame" x="0.0" y="692" width="393" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FeedImageViewCell" rowHeight="580" id="xZW-Kf-x13" customClass="FeedImageViewCell" customModule="EssentialFeediOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="66" width="393" height="580"/>
+                                <rect key="frame" x="0.0" y="84" width="393" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xZW-Kf-x13" id="Aqa-pS-O4Y">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="580"/>
