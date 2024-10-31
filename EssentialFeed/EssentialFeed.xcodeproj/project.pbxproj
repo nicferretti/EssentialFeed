@@ -89,6 +89,7 @@
 		4AE8AEC02CD2777B00C33651 /* FeedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A136B182CADEC1A00A85DA2 /* FeedImagePresenter.swift */; };
 		4AE8AEC12CD277AC00C33651 /* FeedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD94CB2CAB449C0072C311 /* FeedImageViewModel.swift */; };
 		4AE8AEC22CD4255100C33651 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD94BF2CA4B64C0072C311 /* FeedImageDataLoader.swift */; };
+		4AE8AEC72CD4284D00C33651 /* RemoteFeedImageDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AEC62CD4284D00C33651 /* RemoteFeedImageDataLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,7 @@
 		4AE832352BE50E08006E1A37 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		4AE832372BE51175006E1A37 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		4AE8AEBE2CD267BF00C33651 /* FeedImagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagePresenterTests.swift; sourceTree = "<group>"; };
+		4AE8AEC62CD4284D00C33651 /* RemoteFeedImageDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedImageDataLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 			children = (
 				4AE832372BE51175006E1A37 /* RemoteFeedLoaderTests.swift */,
 				4A7F463D2BF5485C00A47294 /* URLSessionHTTPClientTests.swift */,
+				4AE8AEC62CD4284D00C33651 /* RemoteFeedImageDataLoaderTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -926,6 +929,7 @@
 				4A44C05F2C402D160057EEBF /* FeedCacheTestHelpers.swift in Sources */,
 				4A44C05D2C4029400057EEBF /* ValidateFeedCacheUseCaseTests.swift in Sources */,
 				4A66B7172CC6FC43008B70AC /* FeedPresenterTests.swift in Sources */,
+				4AE8AEC72CD4284D00C33651 /* RemoteFeedImageDataLoaderTests.swift in Sources */,
 				4AA018B32C6BFDFC00362BF5 /* XCTestCase+FeedStoreSpecs.swift in Sources */,
 				4AE8AEBF2CD267C700C33651 /* FeedImagePresenterTests.swift in Sources */,
 				4A2CF49F2C6EA19E005E3C87 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */,
