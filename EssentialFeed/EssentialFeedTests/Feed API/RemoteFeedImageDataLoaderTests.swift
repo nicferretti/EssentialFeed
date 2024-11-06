@@ -20,7 +20,9 @@ class RemoteFeedImageDataLoader {
     }
 
     func loadImageData(from url: URL, completion: @escaping (FeedImageDataLoader.Result) -> Void) {
-        client.get(from: url) { result in
+        client.get(from: url) { [weak self] result in
+            guard self != nil else { return }
+
             switch result {
             case let .success((data, response)):
                 if response.statusCode == 200, !data.isEmpty {
@@ -103,11 +105,23 @@ final class RemoteFeedImageDataLoaderTests: XCTestCase {
         })
     }
 
+    func test_loadImageDataFromURL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let client = HTTPClientSpy()
+        var sut: RemoteFeedImageDataLoader? = RemoteFeedImageDataLoader(client: client)
+
+        var capturedResults = [FeedImageDataLoader.Result]()
+        sut?.loadImageData(from: anyURL) { capturedResults.append($0) }
+
+        sut = nil
+        client.complete(withStatusCode: 200, data: anyData())
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
 
     // MARK: - Helpers
 
-    private func makeSUT(url: URL = anyURL, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HttpClientSpy) {
-        let client = HttpClientSpy()
+    private func makeSUT(url: URL = anyURL, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteFeedImageDataLoader, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
         let sut = RemoteFeedImageDataLoader(client: client)
         trackForMemoryLeaks(sut, file: file, line: line)
         trackForMemoryLeaks(client, file: file, line: line)
@@ -149,7 +163,7 @@ final class RemoteFeedImageDataLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
 
-    private class HttpClientSpy: HTTPClient {
+    private class HTTPClientSpy: HTTPClient {
         private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
 
         var requestedURLs: [URL] {
