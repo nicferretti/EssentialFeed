@@ -12,3 +12,7 @@ let anyNSError = NSError(domain: "any error", code: 0)
 var anyURL: URL {
     return URL(string: "https://some-url.com")!
 }
+
+func anyData() -> Data {
+    return Data("any data".utf8)
+}
