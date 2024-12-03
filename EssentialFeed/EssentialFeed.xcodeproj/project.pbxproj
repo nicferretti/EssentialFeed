@@ -495,7 +495,6 @@
 		4AA504F72C92342B00C80CFF /* EssentialFeediOS */ = {
 			isa = PBXGroup;
 			children = (
-				4AAD94BE2CA4B6350072C311 /* Feed Image Loader */,
 				4AAD94BD2CA4B5A00072C311 /* Feed UI */,
 			);
 			path = EssentialFeediOS;
@@ -538,13 +537,6 @@
 				4AAD94BB2CA4B57F0072C311 /* Views */,
 			);
 			path = "Feed UI";
-			sourceTree = "<group>";
-		};
-		4AAD94BE2CA4B6350072C311 /* Feed Image Loader */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Feed Image Loader";
 			sourceTree = "<group>";
 		};
 		4AAD94C52CA7368B0072C311 /* Composers */ = {

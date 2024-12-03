@@ -12,6 +12,7 @@
 		4A6370962CEE7E080091896B /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6370932CEE7E080091896B /* EssentialFeediOS.framework */; };
 		4A6370972CEE7E080091896B /* EssentialFeediOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6370932CEE7E080091896B /* EssentialFeediOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AA90F452CFF3EA80098649C /* EssentialApp.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 4AA90F442CFF3EA80098649C /* EssentialApp.xctestplan */; };
+		4AA90F652CFF4BF00098649C /* EssentialAppUIAcceptanceTests.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 4AA90F642CFF4BF00098649C /* EssentialAppUIAcceptanceTests.xctestplan */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4A6370932CEE7E080091896B /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AA90F442CFF3EA80098649C /* EssentialApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialApp.xctestplan; sourceTree = "<group>"; };
 		4AA90F592CFF3F700098649C /* EssentialAppUIAcceptanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialAppUIAcceptanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AA90F642CFF4BF00098649C /* EssentialAppUIAcceptanceTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialAppUIAcceptanceTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4AA90F442CFF3EA80098649C /* EssentialApp.xctestplan */,
+				4AA90F642CFF4BF00098649C /* EssentialAppUIAcceptanceTests.xctestplan */,
 				4A636FC52CEE77950091896B /* EssentialApp */,
 				4A636FDC2CEE77960091896B /* EssentialAppTests */,
 				4AA90F5A2CFF3F700098649C /* EssentialAppUIAcceptanceTests */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AA90F452CFF3EA80098649C /* EssentialApp.xctestplan in Resources */,
+				4AA90F652CFF4BF00098649C /* EssentialAppUIAcceptanceTests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
