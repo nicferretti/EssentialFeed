@@ -5,8 +5,9 @@
 //  Created by Nicholas Ferretti on 2024/10/08.
 //
 
-import EssentialFeed
 import UIKit
+import EssentialFeed
+import EssentialFeediOS
 
 final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
 
