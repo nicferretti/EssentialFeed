@@ -30,8 +30,6 @@ final class EssentialAppUIAcceptanceTests: XCTestCase {
         offlineApp.launchArguments = ["-connectivity", "offline"]
         offlineApp.launch()
 
-        sleep(30)
-
         let cachedFeedCells = offlineApp.cells.matching(identifier: "feed-image-cell")
         XCTAssertEqual(cachedFeedCells.count, 2)
 
