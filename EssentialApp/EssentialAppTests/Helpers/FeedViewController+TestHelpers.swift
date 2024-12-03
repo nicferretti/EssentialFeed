@@ -61,6 +61,10 @@ extension FeedViewController {
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
 
+    func renderedFeedImageData(at index: Int) -> Data? {
+        return simulateFeedImageViewVisible(at: index)?.renderedImage
+    }
+
     func replaceRefreshControlWithFakeForiOS17Support() {
         let fake = FakeRefreshControl()
 
