@@ -302,7 +302,6 @@
 				4A8E405C2CDD2D1700E0E1B5 /* LoadFeedImageDataFromCacheUseCaseTests.swift */,
 				4AE832372BE51175006E1A37 /* RemoteFeedLoaderTests.swift */,
 				4AE8AEC62CD4284D00C33651 /* LoadFeedImageDataFromRemoteUseCaseTests.swift */,
-				4A65F3F02D09DA66006047B6 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -426,6 +425,23 @@
 			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
+		4A65F3FE2D09EA93006047B6 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				4A65F3F22D09DC1E006047B6 /* RemoteImageCommentsLoader.swift */,
+				4A65F3F42D09DD59006047B6 /* ImageCommentsMapper.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
+		4A65F3FF2D09EAB4006047B6 /* Image Comments API */ = {
+			isa = PBXGroup;
+			children = (
+				4A65F3F02D09DA66006047B6 /* LoadImageCommentsFromRemoteUseCaseTests.swift */,
+			);
+			path = "Image Comments API";
+			sourceTree = "<group>";
+		};
 		4A66B70F2CC6F662008B70AC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,8 +526,6 @@
 				4AA3B6072BEC196F00B68FEB /* RemoteFeedLoader.swift */,
 				4A14BC692BF3FDDD00306C29 /* FeedItemsMapper.swift */,
 				4A44C0532C3F295B0057EEBF /* RemoteFeedItem.swift */,
-				4A65F3F22D09DC1E006047B6 /* RemoteImageCommentsLoader.swift */,
-				4A65F3F42D09DD59006047B6 /* ImageCommentsMapper.swift */,
 				4A8E40552CDC105000E0E1B5 /* RemoteFeedImageDataLoader.swift */,
 			);
 			path = "Feed API";
@@ -633,6 +647,7 @@
 				4A65F3F92D09E91E006047B6 /* Shared API */,
 				4A65F3FA2D09E943006047B6 /* Shared API Infra */,
 				4A65F3F62D09E347006047B6 /* Image Comments Feature */,
+				4A65F3FE2D09EA93006047B6 /* Image Comments API */,
 				4A44C04E2C3F1F660057EEBF /* Feed Cache */,
 				4A14BC6C2BF4089900306C29 /* Feed Feature */,
 				4AA3B6062BEC195900B68FEB /* Feed API */,
@@ -649,8 +664,9 @@
 				4AC15C2A2BF6A6FD00DB5049 /* Helpers */,
 				4A65F3FB2D09E96A006047B6 /* Shared API */,
 				4A65F3FD2D09E991006047B6 /* Shared API Infra */,
-				4A44C04B2C2C89360057EEBF /* Feed Cache */,
+				4A65F3FF2D09EAB4006047B6 /* Image Comments API */,
 				4A14BC6B2BF405C500306C29 /* Feed API */,
+				4A44C04B2C2C89360057EEBF /* Feed Cache */,
 				4A66B7142CC6FC1E008B70AC /* Feed Presentation */,
 			);
 			path = EssentialFeedTests;
