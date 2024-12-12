@@ -5,15 +5,23 @@
 //  Created by Nicholas Ferretti on 2024/12/12.
 //
 
+public protocol ResourceView {
+    func display(_ viewModel: String)
+}
+
 public class LoadResourcePresenter {
-    private let feedView: FeedView
+    public typealias Mapper = (String) -> String
+
+    private let resourceView: ResourceView
     private let loadingView: FeedLoadingView
     private var errorView: FeedErrorView
+    private let mapper: Mapper
 
-    public init(feedView: FeedView, loadingView: FeedLoadingView, errorView: FeedErrorView) {
-        self.feedView = feedView
+    public init(resourceView: ResourceView, loadingView: FeedLoadingView, errorView: FeedErrorView, mapper: @escaping Mapper) {
+        self.resourceView = resourceView
         self.loadingView = loadingView
         self.errorView = errorView
+        self.mapper = mapper
     }
 
     private var feedLoadError: String {
@@ -25,8 +33,8 @@ public class LoadResourcePresenter {
         loadingView.display(FeedLoadingViewModel(isLoading: true))
     }
 
-    public func didFinishLoading(with feed: [FeedImage]) {
-        feedView.display(FeedViewModel(feed: feed))
+    public func didFinishLoading(with resource: String) {
+        resourceView.display(mapper(resource))
         loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
 
