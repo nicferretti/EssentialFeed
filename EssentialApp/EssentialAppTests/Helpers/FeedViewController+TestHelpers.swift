@@ -10,7 +10,7 @@ import EssentialFeediOS
 
 extension ListViewController {
     var errorMessage: String? {
-        return errorView?.message
+        return errorView.message
     }
 
     var isShowingLoadingIndicator: Bool {
@@ -68,6 +68,10 @@ extension ListViewController {
         let ds = tableView.prefetchDataSource
         let index = IndexPath(row: row, section: feedImagesSection)
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
+    }
+
+    func simulateErrorViewTapped() {
+//        errorView.simulateTap()
     }
 
     func renderedFeedImageData(at index: Int) -> Data? {
