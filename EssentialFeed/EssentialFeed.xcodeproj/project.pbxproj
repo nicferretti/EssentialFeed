@@ -124,6 +124,7 @@
 		4AF965602D0B349500631FD4 /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF9655C2D0B348200631FD4 /* SharedLocalizationTestHelpers.swift */; };
 		4AF965622D0B387D00631FD4 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF965612D0B387800631FD4 /* ResourceLoadingView.swift */; };
 		4AF965642D0B390800631FD4 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF965632D0B390000631FD4 /* ResourceErrorView.swift */; };
+		4AFD6F4F2D0D73B4004BCBDA /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFD6F4E2D0D73B4004BCBDA /* CellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,7 @@
 		4AF9655C2D0B348200631FD4 /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 		4AF965612D0B387800631FD4 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		4AF965632D0B390000631FD4 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
+		4AFD6F4E2D0D73B4004BCBDA /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +709,7 @@
 		4AE214722D0CC61F00514E35 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AFD6F4E2D0D73B4004BCBDA /* CellController.swift */,
 				4A68677A2C9DEE1600382A2F /* ListViewController.swift */,
 			);
 			path = Controllers;
@@ -1153,6 +1156,7 @@
 				4A7C8C822D0099DB00083DB6 /* UITableView+HeaderSizing.swift in Sources */,
 				4A66B70E2CC6F0CB008B70AC /* ErrorView.swift in Sources */,
 				4A136B1F2CADF7F100A85DA2 /* UITableView+Dequeueing.swift in Sources */,
+				4AFD6F4F2D0D73B4004BCBDA /* CellController.swift in Sources */,
 				4A68677F2C9E227A00382A2F /* UIView+Shimmering.swift in Sources */,
 				4A66B7132CC6F707008B70AC /* UIRefreshController+Helpers.swift in Sources */,
 				4A136B212CADFB0000A85DA2 /* UIImageView+Animations.swift in Sources */,
