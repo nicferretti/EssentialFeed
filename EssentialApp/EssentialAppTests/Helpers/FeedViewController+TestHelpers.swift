@@ -70,8 +70,8 @@ extension ListViewController {
         ds?.tableView?(tableView, cancelPrefetchingForRowsAt: [index])
     }
 
-    func simulateErrorViewTapped() {
-//        errorView.simulateTap()
+    func simulateErrorViewTap() {
+        errorView.simulateTap()
     }
 
     func renderedFeedImageData(at index: Int) -> Data? {
