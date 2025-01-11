@@ -96,13 +96,47 @@ extension ListViewController {
         refreshControl = fake
     }
 
+}
+
+extension ListViewController {
+    func numberOfRenderedComments() -> Int {
+        tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: commentsSection)
+    }
+
+    func commentMessage(at row: Int) -> String? {
+        commentView(at: row)?.messageLabel?.text
+    }
+
+    func commentDate(at row: Int) -> String? {
+        commentView(at: row)?.dateLabel?.text
+    }
+
+    func commentUsername(at row: Int) -> String? {
+        commentView(at: row)?.usernameLabel?.text
+    }
+
+    private func commentView(at index: Int) -> ImageCommentCell? {
+        guard numberOfRenderedComments() > index else { return nil }
+
+        let ds = tableView.dataSource
+        let index = IndexPath(row: index, section: commentsSection)
+        return ds?.tableView(tableView, cellForRowAt: index) as? ImageCommentCell
+    }
+
+    private var commentsSection: Int {
+        return 0
+    }
+}
+
+
+extension ListViewController {
     func numberOfRenderedImageViews() -> Int {
         tableView.numberOfSections == 0 ? 0 : tableView.numberOfRows(inSection: feedImagesSection)
     }
 
     func feedImageView(at index: Int) -> UITableViewCell? {
         guard numberOfRenderedImageViews() > index else { return nil }
-        
+
         let ds = tableView.dataSource
         let index = IndexPath(row: index, section: feedImagesSection)
         return ds?.tableView(tableView, cellForRowAt: index)
