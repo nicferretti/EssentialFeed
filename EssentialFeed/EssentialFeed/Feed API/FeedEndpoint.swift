@@ -5,7 +5,7 @@
 //  Created by Nicholas Ferretti on 2025/01/12.
 //
 
-public enum FeedEnpoint {
+public enum FeedEndpoint {
     case get(after: FeedImage? = nil)
 
     public func url(baseURL: URL) -> URL {

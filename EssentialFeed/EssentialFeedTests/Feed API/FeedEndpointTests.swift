@@ -13,7 +13,7 @@ final class FeedEndpointTests: XCTestCase {
     func test_feed_endpointURL() {
         let baseURL = URL(string: "https://base-url.com")!
 
-        let receivedURL = FeedEnpoint.get().url(baseURL: baseURL)
+        let receivedURL = FeedEndpoint.get().url(baseURL: baseURL)
 
         XCTAssertEqual(receivedURL.scheme, "https", "scheme")
         XCTAssertEqual(receivedURL.host, "base-url.com", "host")
@@ -25,7 +25,7 @@ final class FeedEndpointTests: XCTestCase {
         let image = uniqueImage()
         let baseURL = URL(string: "https://base-url.com")!
 
-        let receivedURL = FeedEnpoint.get(after: image).url(baseURL: baseURL)
+        let receivedURL = FeedEndpoint.get(after: image).url(baseURL: baseURL)
 
         XCTAssertEqual(receivedURL.scheme, "https", "scheme")
         XCTAssertEqual(receivedURL.host, "base-url.com", "host")
