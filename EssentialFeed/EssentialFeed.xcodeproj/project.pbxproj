@@ -93,7 +93,7 @@
 		4AC495072C7E84F300DCDD05 /* ManagedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC495062C7E84F300DCDD05 /* ManagedCache.swift */; };
 		4AC495092C7E850400DCDD05 /* ManagedFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC495082C7E850400DCDD05 /* ManagedFeedImage.swift */; };
 		4AD93A902CDD603A00C91112 /* CoreDataFeedImageDataStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD93A8F2CDD601700C91112 /* CoreDataFeedImageDataStoreTests.swift */; };
-		4AD93A932CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataLoader.swift */; };
+		4AD93A932CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataStore.swift */; };
 		4AD93A952CE4039900C91112 /* CoreDataFeedStore+FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD93A942CE4038D00C91112 /* CoreDataFeedStore+FeedStore.swift */; };
 		4AE214632D0C9E4600514E35 /* ImageCommentsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE214622D0C9E3C00514E35 /* ImageCommentsPresenterTests.swift */; };
 		4AE214662D0C9F6800514E35 /* ImageCommentsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE214652D0C9F6200514E35 /* ImageCommentsPresenter.swift */; };
@@ -284,7 +284,7 @@
 		4AC495082C7E850400DCDD05 /* ManagedFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedFeedImage.swift; sourceTree = "<group>"; };
 		4AD93A8F2CDD601700C91112 /* CoreDataFeedImageDataStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedImageDataStoreTests.swift; sourceTree = "<group>"; };
 		4AD93A912CDD650300C91112 /* FeedStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FeedStore 2.xcdatamodel"; sourceTree = "<group>"; };
-		4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataLoader.swift"; sourceTree = "<group>"; };
+		4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedImageDataStore.swift"; sourceTree = "<group>"; };
 		4AD93A942CE4038D00C91112 /* CoreDataFeedStore+FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataFeedStore+FeedStore.swift"; sourceTree = "<group>"; };
 		4AE214622D0C9E3C00514E35 /* ImageCommentsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenterTests.swift; sourceTree = "<group>"; };
 		4AE214652D0C9F6200514E35 /* ImageCommentsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCommentsPresenter.swift; sourceTree = "<group>"; };
@@ -708,7 +708,7 @@
 				4A2CF4A72C6EA9E9005E3C87 /* FeedStore.xcdatamodeld */,
 				4A2CF4A52C6EA80E005E3C87 /* CoreDataFeedStore.swift */,
 				4AD93A942CE4038D00C91112 /* CoreDataFeedStore+FeedStore.swift */,
-				4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataLoader.swift */,
+				4AD93A922CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataStore.swift */,
 				4AC495042C7E843E00DCDD05 /* CoreDataHelpers.swift */,
 				4AC495062C7E84F300DCDD05 /* ManagedCache.swift */,
 				4AC495082C7E850400DCDD05 /* ManagedFeedImage.swift */,
@@ -1260,7 +1260,7 @@
 				4AF956A82D33CB6C0053E120 /* FeedEndpoint.swift in Sources */,
 				4A7095B32CC7080500BB5F45 /* ResourceErrorViewModel.swift in Sources */,
 				4A44C0522C3F1FEB0057EEBF /* FeedStore.swift in Sources */,
-				4AD93A932CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataLoader.swift in Sources */,
+				4AD93A932CDD65E600C91112 /* CoreDataFeedStore+FeedImageDataStore.swift in Sources */,
 				4AC15C2E2BF6B77900DB5049 /* URLSessionHTTPClient.swift in Sources */,
 				4AE8AEC02CD2777B00C33651 /* FeedImagePresenter.swift in Sources */,
 				4A66B71C2CC706B3008B70AC /* FeedPresenter.swift in Sources */,
