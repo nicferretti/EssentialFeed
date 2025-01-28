@@ -83,11 +83,15 @@ final class CacheFeedUseCaseTests: XCTestCase {
 
         action()
 
+        var receivedError: NSError?
+
         do {
             try sut.save(imageFeed)
         } catch {
-            XCTAssertEqual(error as NSError?, expectedError, file: file, line: line)
+            receivedError = error as NSError?
         }
+
+        XCTAssertEqual(receivedError, expectedError, file: file, line: line)
     }
 
 }
