@@ -110,7 +110,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
     // MARK: - Helpers
     private func makeFeedLoader(currentDate: Date = Date(), file: StaticString = #file, line: UInt = #line) -> LocalFeedLoader {
         let storeUrl = testSpecificStoreURL()
-        let store = try! CoreDataFeedStore(storeURL: storeUrl)
+        let store = try! CoreDataFeedStore(storeURL: storeUrl, contextQueue: .main)
         let sut = LocalFeedLoader(store: store, currentDate: { currentDate })
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
@@ -119,7 +119,7 @@ final class EssentialFeedCacheIntegrationTests: XCTestCase {
 
     private func makeImageLoader() -> LocalFeedImageDataLoader {
         let storeUrl = testSpecificStoreURL()
-        let store = try! CoreDataFeedStore(storeURL: storeUrl)
+        let store = try! CoreDataFeedStore(storeURL: storeUrl, contextQueue: .main)
         let sut = LocalFeedImageDataLoader(store: store)
         trackForMemoryLeaks(store, file: #file, line: #line)
         trackForMemoryLeaks(sut, file: #file, line: #line)
